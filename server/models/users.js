@@ -16,11 +16,16 @@ const userSchema  = new mongoose.Schema({
     },
   roles:{
     type:[String],
+    Enum:['admin','store-keeper'],
     default:['store-keeper']
-  }
+  },
+  refreshToken: {
+  type: String
+}
 
 
 });
+
 
 const User  = mongoose.model('User',userSchema);
 export default User;
